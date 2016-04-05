@@ -1,15 +1,11 @@
 helpers do
 
 	def current_user
-		@user = User.find(session[:id])
+		@user ||= User.find_by(id: session[:id])
 	end
 
 	def logged_in?
-		if current_user
-			true
-		else
-			false
-		end 
+		!!current_user
 	end
 
 end

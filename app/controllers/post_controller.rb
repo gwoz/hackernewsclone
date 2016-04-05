@@ -1,11 +1,16 @@
-# get '/posts' do
-#   @posts = Post.all
-#   erb :'posts/index'
-# end
+get '/' do
+  @posts = Post.all
+  erb :'posts/index'
+end
 
-# get '/posts/new' do
-#   erb :'posts/new'
-# end
+get '/posts' do
+  @posts = Post.all
+  erb :'posts/index'
+end
+
+get '/posts/new' do
+  erb :'posts/new'
+end
 
 # post '/posts' do
 #   @post = Post.new(params[:post])

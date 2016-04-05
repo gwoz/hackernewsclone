@@ -1,7 +1,7 @@
-# get '/comments' do
-#   @comments = Comment.all
-#   erb :'comments/index'
-# end
+get '/comments' do
+  @comments = Comment.all
+  erb :'comments/index'
+end
 
 # get '/comments/new' do
 #   erb :'comments/new'

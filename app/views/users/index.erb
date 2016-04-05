@@ -1,5 +1,7 @@
 <section id='all-users'>
 	<% @users.each do |user| %>
+		<user>
 		<a href="users/<%= user.id %>"><%= user.username %></a>
+		</user>
 	<% end %>
 </section>
