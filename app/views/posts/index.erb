@@ -1,0 +1,9 @@
+<posts>
+	<% @posts.each do |post| %>
+		<post>
+			<%= post.title %><br>
+			<a href="<%= post.link %>"><%= post.link %></a><br>
+			<a href="/posts/<%= post.id %>/comments/new">Comment</a>
+		</post>
+	<% end %>
+</posts>

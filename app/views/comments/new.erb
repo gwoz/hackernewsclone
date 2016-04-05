@@ -1,0 +1,11 @@
+<comment>
+	<ul id='errors-post'>
+		<% @errors.each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	</ul>
+	<form action="/posts/<%= @post %>/comments" method='post'>
+		<input type='text' name='comment[text]' placeholder="Comment">
+		<input type='submit' value='Submit'>
+	</form>
+</comment>

@@ -9,41 +9,16 @@ get '/posts' do
 end
 
 get '/posts/new' do
+	@errors = []
   erb :'posts/new'
 end
 
-# post '/posts' do
-#   @post = Post.new(params[:post])
-#   if @post.save
-#     redirect '/posts'
-#   else
-#     erb :'posts/new'
-#   end
-# end
-
-# get '/posts/:id' do
-#   @post = Post.find(params[:id])
-#   erb :'posts/show'
-# end
-
-# get '/posts/:id/edit' do
-#   @post = Post.find(params[:id]) #define intstance variable for view
-#   erb :'posts/edit' #show edit Post view
-# end
-
-# put '/posts/:id' do
-#   @post = Post.find(params[:id])
-#   @post.assign_attributes(params[:post])
-#   if @post.save
-#     redirect '/posts'
-#   else
-#     erb :'posts/edit'
-#   end
-# end
-
-# delete '/posts/:id' do
-#   @post = Post.find(params[:id])
-#   @post.destroy
-#   redirect '/posts'
-# end
-# 	
+post '/posts' do
+  @post = Post.new(user_id: current_user.id, title: params[:post][:title], link: params[:post][:link])
+  if @post.save
+    redirect '/posts'
+  else
+  	@errors = @post.errors.full_messages
+    erb :'posts/new'
+  end
+end

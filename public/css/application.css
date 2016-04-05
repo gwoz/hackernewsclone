@@ -1,0 +1,10 @@
+post {
+	display: block;
+	border: 1px solid black;
+	margin: 0.25em;
+	padding: 0.5em;
+}
+
+li {
+	list-style-type: none;
+}
