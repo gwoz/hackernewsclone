@@ -1,10 +1,12 @@
 get '/' do
   @posts = Post.all
+  @comments = Comment.all
   erb :'posts/index'
 end
 
 get '/posts' do
   @posts = Post.all
+  @comments = Comment.all
   erb :'posts/index'
 end
 

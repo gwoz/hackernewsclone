@@ -1,6 +1,6 @@
 <h1><a href='/'>Home</a></h1>
 <% if logged_in? %>
-	<a href="/users/<%= @user.id %>"><%= @user.username %>'s Profile</a>
+	<a href="/users/<%= @user.id %>"><%= @user.username %>Profile</a>
 	<a href="/posts/new">New Post</a>
 	<a href="/logout">Logout</a>
 <% else %>
