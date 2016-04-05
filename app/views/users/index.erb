@@ -1,1 +1,5 @@
-index.erb
+<section id='all-users'>
+	<% @users.each do |user| %>
+		<a href="users/<%= user.id %>"><%= user.username %></a>
+	<% end %>
+</section>
