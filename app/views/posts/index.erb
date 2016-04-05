@@ -1,0 +1,19 @@
+<posts>
+	<% @posts.each do |post| %>
+		<post>
+			
+			<%= post.title %><br>
+			
+			<a href="<%= post.link %>"><%= post.link %></a><br>
+			<a href="/posts/<%= post.id %>/comments/new">Comment</a>
+			
+			<ul>
+				<% @post_comments = @comments.select {|comment| post.id == comment.post_id} %>
+				<% @post_comments.each do |comment| %>
+				<li><%= comment.text %></li>
+				<% end %>
+			</ul>
+		
+		</post>
+	<% end %>
+</posts>

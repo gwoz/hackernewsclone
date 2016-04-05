@@ -1,0 +1,12 @@
+<user>
+	<ul id='errors-user'>
+		<% @errors.each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	</ul>
+	<form action='/users' method='post'>
+		<input type='text' name='user[username]' placeholder='Username'>
+		<input type='password' name='user[password]' placeholder='Password'>
+		<input type='submit' value='Submit'>
+	</form>
+</user>
